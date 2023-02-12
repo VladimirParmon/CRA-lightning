@@ -4,6 +4,12 @@ import styled from 'styled-components';
 import { flexCenter } from '../../constants/styling';
 import salesforce from '../../assets/salesforce.svg';
 import Button from '@salesforce/design-system-react/components/button';
+import { useNavigate } from 'react-router';
+import { SetState } from '../../models/utils';
+
+interface Props {
+  setIsLogged: SetState<boolean>;
+}
 
 const Container = styled.div`
   ${flexCenter};
@@ -16,11 +22,14 @@ const SalesforceLogo = styled.img`
   width: 100px;
 `;
 
-export default function LoginPage() {
+export default function LoginPage({ setIsLogged }: Props) {
   const [isChecked, setIsChecked] = useState(false);
+  const navigate = useNavigate();
 
   function handleLogin() {
     //TODO: handle login to salesforce
+    setIsLogged(true);
+    navigate('/');
   }
 
   return (
