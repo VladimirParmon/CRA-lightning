@@ -1,5 +1,11 @@
 const path = require('path');
 
+const multipleEntry = require('react-app-rewire-multiple-entry')([
+  {
+    entry: 'src/background/background.ts',
+  },
+]);
+
 module.exports = function override(config, env) {
   config.module.rules = [
     // salesforce dependencies
@@ -15,6 +21,8 @@ module.exports = function override(config, env) {
       },
     },
   ].concat(config.module.rules);
+
+  multipleEntry.addMultiEntry(config);
 
   return config;
 };
