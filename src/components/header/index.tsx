@@ -3,18 +3,18 @@ import { HeaderTop } from './HeaderTop';
 import { FlexContainer } from './styledComponents';
 
 interface Props {
-  isLoading: boolean;
-  isLogged: boolean;
+  showHeaderBottom: boolean;
 }
 
-export function Header({ isLoading, isLogged }: Props) {
+export function Header({ showHeaderBottom }: Props) {
   return (
     <FlexContainer
       padding={[15, 10]}
       gap={10}
-      style={{ flexDirection: 'column', borderBottom: '1px solid lightgrey' }}>
+      direction='column'
+      style={{ borderBottom: '1px solid lightgrey' }}>
       <HeaderTop />
-      {!isLoading && isLogged && <HeaderBottom />}
+      {showHeaderBottom && <HeaderBottom />}
     </FlexContainer>
   );
 }
