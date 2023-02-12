@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { Header } from './components/header';
+import Spinner from './components/Spinner';
 
 const MainContainer = styled.div`
   width: 300px;
-  height: 800px;
+  max-height: 800px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -17,7 +18,10 @@ export default function App() {
   const [isLogged, setIsLogged] = useState(true);
   return (
     <MainContainer>
-      <Header isLoading={isLoading} isLogged={isLogged} />
+      <MainContainer>
+        <Header isLoading={isLoading} isLogged={isLogged} />
+        {isLoading && <Spinner size='medium' variant='brand' />}
+      </MainContainer>
     </MainContainer>
   );
 }
