@@ -5,6 +5,7 @@ import Button from '@salesforce/design-system-react/components/button';
 import Avatar from '../Avatar';
 import styled from 'styled-components';
 import { flexCenter } from '../../constants/styling';
+import avatar from '../../assets/avatar.png';
 
 const StyledButton = styled(Button)`
   ${flexCenter};
@@ -28,7 +29,7 @@ export function HeaderBottom() {
         iconLeft={<InputIcon name='search' category='utility' />}
         placeholder='Search in Salesforce'
       />
-      <Avatar width={33} height={33} margin={[0, 0, 0, 5]} />
+      <Avatar size={33} margin={[0, 0, 0, 5]} src={avatar} />
     </FlexContainer>
   );
 }
