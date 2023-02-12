@@ -13,6 +13,9 @@ const Container = styled.div`
   ${flexCenter};
   width: 100%;
   min-height: 100px;
+  * {
+    background-color: #fafafa;
+  }
 `;
 
 export default function SpinnerComponent({ size, variant, label }: Props) {
