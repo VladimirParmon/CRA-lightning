@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ContactsFound from '../../components/found/ContactsFound';
+import ContactsFound from '../../components/view/contactInfo';
 import CompanyNotFound from '../../components/notFound/CompanyNotFound';
 import PersonNotFound from '../../components/notFound/PersonNotFound';
 import { flexCenter } from '../../constants/styling';

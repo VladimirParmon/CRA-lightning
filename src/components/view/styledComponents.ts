@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const ViewSection = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 0 3px;
   width: 100%;
 `;
 
-export const Heading = styled.div`
+export const SectionHeadingContainer = styled.div`
   display: flex;
   gap: 10px;
   justify-content: flex-start;
@@ -16,23 +17,32 @@ export const Heading = styled.div`
 `;
 
 export const Card = styled.div`
-  padding: 10px;
   display: flex;
   flex-direction: column;
   width: 100%;
 `;
 
-export const CardHeader = styled.div`
-  display: flex;
-  align-items: center;
+export const CardPadding = styled.div`
+  padding: 0 10px 10px 10px;
 `;
 
-export const CardBody = styled.div<{ isOpen: boolean }>`
+export const CardHeaderContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 10px;
+`;
+
+export const CardExpandableBody = styled.div<{ isOpen: boolean }>`
   display: flex;
   flex-direction: column;
-  gap: 10px;
   overflow: hidden;
   ${(p) => `height: ${p.isOpen ? 'auto' : '0'};`}
+`;
+
+export const CardBodyDetailsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 `;
 
 export const Spacer = styled.span`
@@ -70,4 +80,26 @@ export const IconString = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+`;
+
+export const ExpandableSectionHeader = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+`;
+
+export const ExpandableSectionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ExpandableSectionBody = styled.div<{ isOpen: boolean }>`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  background-color: #f3f1f2;
+  ${(p) => `max-height: ${p.isOpen ? 'auto' : '0'};`}
 `;

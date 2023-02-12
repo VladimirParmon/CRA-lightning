@@ -1,4 +1,4 @@
-type Groups = 'action' | 'custom' | 'doctype' | 'standard' | 'utility' | undefined;
+export type Groups = 'action' | 'custom' | 'doctype' | 'standard' | 'utility' | undefined;
 type IconDictionary = Record<string, { name: string; group: Groups }>;
 
 export const ProfileDictionary: IconDictionary = {

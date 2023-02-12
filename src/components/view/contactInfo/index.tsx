@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { mock } from './mock';
-import { Container } from './styledComponents';
+import { mock } from '../mock';
+import { ViewSection } from '../styledComponents';
 
-import { SectionHeading } from './common/SectionHeading';
-import { SingleContact } from './contact/SingleContact';
+import { SectionHeading } from '../common/SectionHeading';
+import { SingleContact } from './SingleContact';
 
 export default function ContactsFound() {
   const [currentlyOpened, setCurrentlyOpened] = useState(-1);
@@ -12,7 +12,7 @@ export default function ContactsFound() {
     index === currentlyOpened ? setCurrentlyOpened(-1) : setCurrentlyOpened(index);
   }
   return (
-    <Container>
+    <ViewSection>
       <SectionHeading iconName='contact' text='Contacts' />
       {mock.map((item, index) => (
         <SingleContact
@@ -23,6 +23,6 @@ export default function ContactsFound() {
           isOpen={index === currentlyOpened}
         />
       ))}
-    </Container>
+    </ViewSection>
   );
 }

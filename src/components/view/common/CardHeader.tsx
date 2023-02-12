@@ -1,5 +1,12 @@
 import Avatar from '../../Avatar';
-import { Buttons, CardHeader, NameSpan, Overview, Spacer, Span } from '../styledComponents';
+import {
+  Buttons,
+  CardHeaderContainer,
+  NameSpan,
+  Overview,
+  Spacer,
+  Span,
+} from '../styledComponents';
 import Button from '@salesforce/design-system-react/components/button';
 
 interface Props {
@@ -9,7 +16,7 @@ interface Props {
   manageSections: (index: number) => void;
 }
 
-function HeaderOverview({ data }: any) {
+function CardHeaderOverview({ data }: any) {
   return (
     <Overview>
       <NameSpan>{data.Name}</NameSpan>
@@ -19,13 +26,13 @@ function HeaderOverview({ data }: any) {
   );
 }
 
-export default function ContactsCardHeader({ index, data, isOpen, manageSections }: Props) {
+export default function CardHeader({ index, data, isOpen, manageSections }: Props) {
   function viewInSalesforce() {}
   const chevron = isOpen ? 'chevronup' : 'switch';
   return (
-    <CardHeader>
+    <CardHeaderContainer>
       <Avatar size={50} />
-      {!isOpen && <HeaderOverview data={data} />}
+      {!isOpen && <CardHeaderOverview data={data} />}
       <Spacer />
       <Buttons>
         {isOpen && (
@@ -48,6 +55,6 @@ export default function ContactsCardHeader({ index, data, isOpen, manageSections
           variant='icon'
         />
       </Buttons>
-    </CardHeader>
+    </CardHeaderContainer>
   );
 }

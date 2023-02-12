@@ -1,10 +1,10 @@
 import Icon from '@salesforce/design-system-react/components/icon';
 import { ProfileDictionary } from '../common/iconDictionary';
-import { IconString } from '../styledComponents';
+import { CardBodyDetailsContainer, IconString } from '../styledComponents';
 
 export function ContactBodyDetails({ data }: any) {
   return (
-    <>
+    <CardBodyDetailsContainer>
       <IconString>
         <Icon
           category={ProfileDictionary.Company.group}
@@ -31,6 +31,6 @@ export function ContactBodyDetails({ data }: any) {
         />
         <span>{data.Phone}</span>
       </IconString>
-    </>
+    </CardBodyDetailsContainer>
   );
 }

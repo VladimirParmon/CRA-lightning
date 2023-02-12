@@ -1,4 +1,4 @@
-import { Heading } from '../styledComponents';
+import { SectionHeadingContainer } from '../styledComponents';
 import Icon from '@salesforce/design-system-react/components/icon';
 
 interface Props {
@@ -8,11 +8,11 @@ interface Props {
 
 export function SectionHeading({ iconName, text }: Props) {
   return (
-    <Heading>
+    <SectionHeadingContainer>
       <Icon assistiveText={{ label: iconName }} category='standard' name={iconName} size='small' />
       <span style={{ fontSize: '1.1rem' }}>
         <b>{text}</b>
       </span>
-    </Heading>
+    </SectionHeadingContainer>
   );
 }
